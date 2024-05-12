@@ -1,0 +1,17 @@
+go to main42.cmd in /Pythia8/examples
+
+uncomment: i) Beams: frameType = 4, ii) Beams: LHEF = file.lhe
+comment section 5a
+.
+Execute the main42.cc using the following command:
+
+g++ -o main42 main42.cc \
+-I/path/to/pythia8310/include \
+-L/path/to/pythia8310/lib -lpythia8 \
+-I/usr/local/include -L/usr/local/lib -lHepMC3 \
+-std=c++11
+
+export LD_LIBRARY_PATH=/path/to/pythia8310/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/path/to/hepmc3/lib:$LD_LIBRARY_PATH
+
+./main42 main42.cmnd output.hepmc
